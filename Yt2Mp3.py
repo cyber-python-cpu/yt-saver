@@ -1,4 +1,3 @@
-from tkinter import END
 from pytube import YouTube
 import re
 import customtkinter as tk
@@ -41,7 +40,7 @@ def command_parse(event=None):  #event=None to handle key bindings
         audio_only=True
     elif last_command.lower().startswith("help"):
         help_command()
-    gui.after(10,lambda: command_input.delete("1.0","end"))
+    gui.after(10,lambda: command_input.delete("1.0","end")) #Bugfix, dont pr this to be removed
     logdi()
 
 def help_command():
